@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #1e1e2f;
+    --text-color: #ffffff;
+    --btn-bg-color: #2c2c3c;
+    --btn-text-color: #ffffff;
+    --btn-hover-bg: #3c3c5f;
+    --btn-equals-bg: #1abc9c;
+    --btn-equals-hover: #16a085;
+    --operator-bg-color: #f39c12;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --btn-bg-color: #e0e0e0;
+    --btn-text-color: #000000;
+    --btn-hover-bg: #d0d0d0;
+    --btn-equals-bg: #3498db;
+    --btn-equals-hover: #2980b9;
+    --operator-bg-color: #e67e22;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s;
+}
+
+.calculator {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.display {
+    margin-bottom: 20px;
+}
+
+.display input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover-bg);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background-color: var(--operator-bg-color);
+}
+
+.equals {
+    background-color: var(--btn-equals-bg);
+    grid-column: span 2;
+}
+
+.equals:hover {
+    background-color: var(--btn-equals-hover);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#theme-btn:hover {
+    transform: rotate(180deg);
+}
